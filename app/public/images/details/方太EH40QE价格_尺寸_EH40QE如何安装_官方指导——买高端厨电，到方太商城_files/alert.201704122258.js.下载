@@ -1,0 +1,66 @@
+﻿(function ($) {
+
+    $.extend({
+        alert_success: function (option) {
+            var defaultSetting = { msg: 'default message', cbBtn: function () { } };
+            var setting = $.extend(defaultSetting, option);
+
+
+            $('\
+                <div class="alert-success-mask" style="background-color:rgba(8,8,8,0.5);position:fixed;top:0;left:0;bottom:0;right:0;z-index:10000;">\
+                    <div class="alert-success" style= "background-color:#fff;width:550px;min-height:340px;border-radius:6px;position:absolute;left:50%;top:50%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);text-align:center;" >\
+                        <img id="alert-success-close" src="/images/alert-close.png" style="position:absolute;top:20px;right:20px;cursor:pointer" />\
+                        <img src="/images/alert-success.png" style="margin-top:50px;" />\
+                        <p id="alert-success-mask-text" style="margin-top:27px;font-size:24px;color:#030303;">'+ setting.msg +'</p>\
+                        <a id="alert-success-btn" href="javascript:void(0);" style="width:340px;line-height:50px;height:50px;border:1px solid #dcdcdc;background-color:rgba(255,255,255,0.5);display:inline-block;position:absolute;bottom:50px;left:50%;margin-left:-170px;color:#030303;font-size:16px;">确认</a>\
+                    </div>\
+                </div>\
+            ').appendTo(document.body);
+
+            $(document.body).css({ overflow: 'hidden' });
+
+            $('#alert-success-close').one('click', function () {
+                $(document.body).css({ overflow: 'auto' });
+                $('.alert-success-mask').remove();
+            });
+
+            $('#alert-success-btn').one('click', function () {
+                $(document.body).css({ overflow: 'auto' });
+                $('.alert-success-mask').remove();
+                setting.cbBtn();
+            });
+            
+        },
+        alert_warn: function (option) {
+            var defaultSetting = { msg: 'default message', cbBtn: function () { } };
+            var setting = $.extend(defaultSetting, option);
+
+
+            $('\
+                <div class="alert-warn-mask" style="background-color:rgba(8,8,8,0.5);position:fixed;top:0;left:0;bottom:0;right:0;z-index:10000;">\
+                    <div class="alert-warn" style= "background-color:#fff;width:550px;min-height:340px;border-radius:6px;position:absolute;left:50%;top:50%;transform:translate3d(-50%,-50%,0);-webkit-transform:translate3d(-50%,-50%,0);text-align:center;" >\
+                        <img id="alert-warn-close" src="/images/alert-close.png" style="position:absolute;top:20px;right:20px;cursor:pointer" />\
+                        <img src="/images/alert-warn.png" style="margin-top:50px;" />\
+                        <p id="alert-warn-mask-text" style="margin-top:27px;font-size:24px;color:#030303;">'+ setting.msg + '</p>\
+                        <a id="alert-warn-btn" href="javascript:void(0);" style="width:340px;line-height:50px;height:50px;border:1px solid #dcdcdc;background-color:rgba(255,255,255,0.5);display:inline-block;position:absolute;bottom:50px;left:50%;margin-left:-170px;color:#030303;font-size:16px;">确认</a>\
+                    </div>\
+                </div>\
+            ').appendTo(document.body);
+
+            $(document.body).css({ overflow: 'hidden' });
+
+            $('#alert-warn-close').one('click', function () {
+                $(document.body).css({ overflow: 'auto' });
+                $('.alert-warn-mask').remove();
+            });
+
+            $('#alert-warn-btn').one('click', function () {
+                $(document.body).css({ overflow: 'auto' });
+                $('.alert-warn-mask').remove();
+                setting.cbBtn();
+            });
+
+        }
+    });
+
+})(jQuery);

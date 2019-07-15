@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <link rel="stylesheet" href="./css/common.css">
+   <link rel="stylesheet" href="./css/login.css">
+   <script src="./js/headAndFooter.js"></script>
+</head>
+
+<body>
+   <!-- 头部 -->
+   <header class="fixed" id="header"></header>
+   <div style="height:120px;"></div>
+   <!-- 登录表单 -->
+   <section>
+      <div class="loginForm">
+         <div class="login-header">登录</div>
+         <div class="formBody">
+            <ul>
+               <li class="formLine"><input autofocus type="text" placeholder="输入手机号/邮箱" id="phone" class="input100"></li>
+               <li class="formLine"><input  type="password" placeholder="输入密码" id="upwd" class="input100"></li>
+               <li class="formLine"><input type="text" placeholder="依次输入图片中的字符" class="input50" id="iCode">
+                  <input type="button" class="input50 yzm" data-id="yzm" value="">
+               </li>
+               <li class="formLine">
+                  <label for="agree_zc" class="checkboxLabel">
+                     <input type="checkbox" id="agree_zc">
+                     <span>下次自动登录</span>
+                     <a href="###" class="float-right">忘记密码</a> 
+                  </label>
+               </li>
+               <li class="formLine"><input type="button" class="btn100 userLogin" value="登录"></li>
+               <li class="formLine other"><a href="reg.html" target="_blank" class="input100"><span>还没有方太商城账号？
+                        &nbsp;</span> 立即注册</a></li>
+               <li class="formLine text-center"><span>使用第三方账号登录：</span><a href="###" class="wx"></a></li>
+            </ul>
+         </div>
+      </div>
+   </section>
+   <footer id="footer" class="clearfix"></footer>
+   <!-- js -->
+   <script src="./js/login.js"></script>
+
+</body>
+
+</html>

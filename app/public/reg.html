@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <link rel="stylesheet" href="./css/common.css">
+   <link rel="stylesheet" href="./css/reg.css">
+   <script src="./js/headAndFooter.js"></script>
+</head>
+
+<body>
+   <!-- 头部 -->
+   <header class="fixed" id="header"></header>
+   <div style="height:120px;"></div>
+   <!-- 注册表单 -->
+   <section>
+      <div class="regForm">
+         <div class="reg-header">注册</div>
+         <div class="formBody">
+            <ul>
+               <li class="formLine">
+                  <input type="text" placeholder="输入手机号" class="input100" id="phone" autofocus></li>
+               <li class="formLine">
+                  <input type="password" placeholder="设置密码" class="input50" id="upwd">
+                  <input type="password" placeholder="重复密码" class="input50" id="cpwd" style="float: right"></li>
+               <li class="formLine">
+                  <input type="text" placeholder="请输入验证码" class="input50" id="yzm">
+                  <input type="button" value="获取验证码" class="btn50" data-id=yzm style="float: right"></li>
+               <li class="formLine text-center" style="margin-bottom: 25px;">
+                  <label for="agree_zc" class="checkboxLabel">
+                     <input type="checkbox" id="agree_zc" checked>
+                     <span>我已阅读并同意</span>
+                     <a href="###">会员注册协议，会员隐私政策</a>
+                  </label>
+               </li>
+               <li class="formLine"><input type="button" class="btn100 userReg" value="立即注册"></li>
+               <li class="formLine text-center other"><span>已有方太商城账号？&nbsp;</span><a href="login.html" target="_blank"
+                     class="login">立即登录</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </section>
+   <footer id="footer" class="clearfix"></footer>
+   <!-- js -->
+   <script>
+
+   </script>
+   <script src="./js/reg.js"></script>
+
+</body>
+
+</html>

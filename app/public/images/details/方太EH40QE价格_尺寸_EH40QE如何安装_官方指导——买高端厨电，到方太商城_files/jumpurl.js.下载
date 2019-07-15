@@ -1,0 +1,123 @@
+﻿function pctom() {
+    var prefix_PC = '//www.efotile.com';
+    var prefix_mo = '//m.efotile.com';
+
+    //var prefix_PC = '//localhost:2429';
+    //var prefix_mo = '//m.efotile.com';
+    var url = location.href;
+    // 首页
+    // 登录
+    // 注册
+    // 套餐，html？
+    // 积分商城
+    // 限时特惠
+    // productdetail
+    if (url === "https://www.efotile.com/" || url === "http://www.efotile.com/") {
+        console.log(prefix_mo);
+         location.href = prefix_mo;
+    } else if (url.match(prefix_PC.concat('/login.aspx'))) {
+        console.log(prefix_mo.concat('/Login'));
+         location.href = prefix_mo.concat('/Login');
+    } else if (url.match(prefix_PC.concat('/register.aspx'))) {
+        console.log(prefix_mo.concat('/Register'));
+         location.href = prefix_mo.concat('/Register');
+    } else if (url.match(prefix_PC.concat('/producttype.html')) || url.match(prefix_PC.concat('/producttype.aspx'))) {
+        console.log(prefix_mo.concat('/Goods/Product'));
+         location.href = prefix_mo.concat('/Goods/Product');
+    } else if (url.match(prefix_PC.concat('/producttype/'))) {
+        location.href = prefix_mo.concat('/Goods/Product?typeid=' + pUrlParse().protype);
+    } else if (url.match(prefix_PC.concat('/integralshop.html')) || url.match(prefix_PC.concat('/integralshop.aspx'))) {
+        console.log(prefix_mo.concat('/Goods/Integral'));
+         location.href = prefix_mo.concat('/Goods/Integral');
+    } else if (url.match(prefix_PC.concat('/grouptype.html')) || url.match(prefix_PC.concat('/integralshop.html'))) {
+        console.log(prefix_mo.concat('/Goods/Product?typeid=0'));
+         location.href = prefix_mo.concat('/Goods/Product?typeid=0');
+    } else if (url.match(prefix_PC.concat('/activity.html')) || url.match(prefix_PC.concat('/grouptype.aspx'))) {
+        console.log(prefix_mo.concat('/Goods/Activity'));
+         location.href = prefix_mo.concat('/Goods/Activity');
+    } else if (url.match(prefix_PC.concat('/productdetail'))) {
+        if (!!url.match('.html')) { //访问伪静态
+            console.log(prefix_mo.concat('/Goods/Product/Detail?id=' + sUrlParse()._proid.split('.')[0] + '&isgro=' + (parseInt(sUrlParse()._t) - 1)));
+            location.href = prefix_mo.concat('/Goods/Product/Detail?id=' + sUrlParse()._proid.split('.')[0] + '&isgro=' + (parseInt(sUrlParse()._t) - 1));
+        }
+    } else if (url.match(prefix_PC.concat('/integraldetail'))) {
+        if (!!url.match('.html')) { //访问伪静态
+            console.log(prefix_mo.concat('/Goods/Integral/Detail/' + sUrlParse()._proid.split('.')[0]));
+            location.href = prefix_mo.concat('/Goods/Integral/Detail/' + sUrlParse()._proid.split('.')[0]);
+        } else {
+            location.href = prefix_mo.concat('/Goods/Integral/Detail/' + urlParse()._proid);
+        }
+    } else if (url.match(prefix_PC.concat('/producttype'))) { // 产品分类
+        if (!isEmptyObject(pUrlParse())) {
+            console.log(prefix_mo.concat('/Goods/Product?typeid=' + pUrlParse().protype));
+            location.href = prefix_mo.concat('/Goods/Product?typeid=' + pUrlParse().protype);
+        }
+    } else if (url.match(prefix_PC.concat('/receivepacket.aspx'))) { // 优惠券
+        console.log(prefix_mo.concat('/User/Center/ReceiveCoupons?_id=' + urlParse()._id + '&_s=' + urlParse()._s));
+        location.href = prefix_mo.concat('/User/Center/ReceiveCoupons?_id=' + urlParse()._id + '&_s=' + urlParse()._s);
+    } else if (url.match(prefix_PC.concat('/productsearch'))) { // 搜索
+        location.href = prefix_mo.concat('/Search?keyword=' + kUrlParse().keywords);
+    }
+}
+if (navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i) && location.host.indexOf('m.')<0) {
+    pctom();
+}
+
+function urlParse() {
+    var url = window.location.search;
+    var obj = {};
+    var reg = /[?&][^?&]+=[^&]+/g;
+    var arr = url.match(reg);
+    if (arr) {
+        arr.forEach(function(item){
+            var tempArr = item.substring(1).split('=');
+            var key = tempArr[0];
+            var val = tempArr[1];
+            obj[key] = val;
+        });
+    }
+    return obj;
+}
+
+function sUrlParse() {
+    var url = window.location.href;
+    var obj = {};
+    var reg = /_\S*[///.]/g;
+    var str = url.match(reg) ? url.match(reg)[0]: "";
+    str = str.substring(0, str.length - 1);
+    var arr = str.split('/');
+    if (arr) {
+        arr.forEach(function (item) {
+            var tempArr = item.split('-');
+            var key = tempArr[0];
+            var val = tempArr[1];
+            obj[key] = val;
+        });
+    }
+    return obj;
+}
+
+function pUrlParse() {
+    var url = window.location.href;
+    var obj = { protype: '' };
+    var reg = /protype-\d*/;
+    var str = url.match(reg)[0].substring(8);
+    obj["protype"] = str;
+    return obj;
+}
+
+function kUrlParse() {
+    var url = window.location.href;
+    var obj = { keywords: '' };
+    var reg = /keywords-\S*/;
+    var str = url.match(reg)[0].substring(9, url.match(reg)[0].length - 5);
+    obj["keywords"] = str;
+    return obj;
+}
+
+function isEmptyObject(obj) {
+    for (var key in obj) {
+        return false;
+    }
+    return true;
+}

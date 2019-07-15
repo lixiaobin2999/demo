@@ -1,0 +1,154 @@
+/* css reset */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* 样式 */
+body {
+   width: 1583px;
+   background: #faf8f7;
+   font-size: 12px;
+   letter-spacing: 1px;
+}
+
+
+input,button{
+   border:0;   
+   outline: 0;
+
+}
+i {
+   font-style: normal;
+}
+
+a {
+   text-decoration: none;
+   color: #333;
+}
+
+ul,
+ol {
+   list-style: none;
+}
+
+/* 商品通用S */
+.breadcrumb {
+   margin: 0 -15px;
+   background: 0 0;
+   font-size: 14px;
+}
+
+.breadcrumb li {
+   display: inline-block;
+}
+
+.breadcrumb li a {
+   line-height: 30px;
+   font-size: 14px;
+
+}
+
+.breadcrumb>li+li:before {
+   padding: 0 5px;
+   color: #ccc;
+   font-size: 12px;
+   content: "/\00a0";
+}
+
+.container {
+   padding-right: 15px;
+   padding-left: 15px;
+}
+
+/* 商品通用End */
+
+.w-1200n {
+   width: 1200px;
+   margin: 0 auto;
+}
+
+.f-1150n {
+   width: 1150px;
+   color: #333;
+   margin: 0 auto;
+
+}
+
+.my_small {
+   font-size: 12px;
+}
+
+.text-center {
+   text-align: center
+}
+
+.text-right {
+   text-align: right
+}
+
+.text-left {
+   text-align: left
+}
+
+.float-left {
+   float: left;
+}
+
+.float-right {
+   float: right;
+}
+
+.w-100 {
+   width: 100%;
+}
+
+.clearM::before {
+   display: table;
+   content: "";
+}
+
+.clearM::after {
+   content: "";
+   clear: both;
+   display: block;
+}
+
+.iframe-sHeader {
+   max-height: 110px;
+   width: 100%;
+   box-shadow: 1px 1px 5px #ccc;
+   position: fixed;
+   top: 0;
+   z-index: 999;
+}
+
+.iframe-sFooter {
+   margin: 80px 0 0 0;
+   height: 620px;
+   width: 100%;
+}
+
+.clearfix::before {
+   content: "";
+   clear: both;
+   display: block;
+}
+
+.clearfix::after {
+   content: "";
+   clear: both;
+   display: block;
+}
+
+.iframe-header {
+   height: 81px;
+   width: 100%;
+}
+
+.iframe-footer {
+   margin: 80px 0 0 0;
+   height: 685px;
+   width: 100%;
+}

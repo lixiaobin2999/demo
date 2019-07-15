@@ -1,0 +1,308 @@
+body {
+  width: 1567px;
+}
+
+table {
+  background-color: transparent;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-color: grey;
+}
+
+thead,
+img {
+  vertical-align: middle;
+}
+
+/* 标题 S */
+
+.pro-list,
+.actionBar {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* 购物车规格 */
+.pro-list th {
+  line-height: 20px;
+  height: 35px;
+  font-family: sans-serif;
+}
+
+.pro-list th,
+.pro-list td {
+  font-weight: normal;
+  text-align: center;
+}
+
+.pro-list .checkBtn {
+  width: 40px;
+}
+
+.pro-list .proPic,
+.pro-list .proPrice {
+  width: 150px;
+}
+
+.pro-list .proInfo {
+  width: 265px;
+}
+
+.pro-list .proCount {
+  width: 160px;
+}
+
+.pro-list .proSubtotal {
+  width: 125px;
+}
+
+.pro-list .proDo {
+  width: 125px;
+}
+
+/* 标题 End*/
+/* 购物车内容S */
+.pro-list td {
+  background-color: #f2f2f2;
+  padding: 20px 0;
+  text-align: center;
+}
+
+input[type=checkbox] {
+  margin: 4px 0 0;
+  line-height: normal;
+  display: none;
+}
+
+.checkBtn .isChecked+span,
+.checkAll .isChecked+span {
+  background: url(../images/cart/checked.png) no-repeat center center;
+}
+
+.checkBtn .check-box,
+.checkAll .check-box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #adadad;
+}
+
+/* 产品 */
+
+.proPic img {
+  width: 60px;
+  height: 60px;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* 产品信息 */
+.pro-list .proInfo {
+  width: 265px;
+}
+
+.pro-list .proInfo a {
+  display: inline-block;
+  width: 190px;
+  text-align: left;
+}
+
+.pro-list .proInfo .title {
+  display: inline-block;
+  line-height: 22px;
+  max-height: 44px;
+  overflow: hidden;
+  width: 190px;
+  color: #333;
+}
+
+.title {
+  white-space: nowrap;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 单价 */
+.proPrice span,
+.proSubtotal span {
+  display: inline-block;
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.proPrice span del {
+  color: #9A9691;
+}
+
+/* 数量 */
+.proCount button {
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  font-size: 24px;
+  line-height: 25px;
+  text-align: center;
+  cursor: pointer;
+  color: #666;
+}
+
+.proCount input {
+  display: inline-block;
+  width: 30px;
+  height: 25px;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  line-height: 25px;
+  vertical-align: top;
+  text-align: center;
+}
+
+.proSubtotal span {
+  color: #9D1D22;
+  font-size: 14px;
+}
+
+/* 操作/删除 */
+.proDo .del {
+  display: inline-block;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  color: #666;
+}
+
+/* 操作栏 */
+.checkAll {
+  width: 90px;
+  margin: 0 10px;
+  white-space: nowrap;
+}
+
+.checkAll span {
+  line-height: 25px;
+  vertical-align: top;
+  margin-right: 10px;
+}
+
+.delChecked {
+  width: 130px;
+  cursor: pointer;
+}
+
+.toBack {
+  width: 600px;
+}
+
+/* 收货地址 */
+.myAddr {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.myAddr .addr-edit {
+  color: blue;
+}
+
+/* 总价 */
+.orderTotalprice,
+.orderDiscount {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+/* 结算 */
+.orderCount {
+  white-space: nowrap;
+}
+
+.orderCount {
+  width: 110px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.payPrice {
+  width: 170px;
+}
+
+.payPrice b {
+  font-size: 18px;
+  color: #9D1D22;
+  line-height: 16px;
+  font-weight: 700;
+}
+
+.btn-pay {
+  text-align: right;
+}
+
+.btn-pay .maskBtn {
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  font-size: 16px;
+  background: #9D1D22;
+  text-align: center;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-pay input {
+  width: 180px;
+  height: 42px;
+  background: #9D1D22;
+  text-align: center;
+  color: #fff;
+  border: 0;
+}
+
+/* 赠品 */
+.proGift {
+  width: 100%;
+}
+
+.proGift .hd {
+  width: 100%;
+  padding: 15px 0 15px 10px;
+  color: #000;
+  font-size: 12px;
+}
+
+.proGift li {
+  width: 15%;
+  height: 120px;
+  /* float: left; */
+}
+
+.proGift li {
+  width: 8%;
+}
+
+.giftItem {
+  text-align: center;
+}
+
+.proGift li img {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+}
+
+.proGift li .point {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.proGift li .point {
+  max-height: 32px;
+  line-height: 16px;
+  color: #9D1D22;
+  overflow: hidden;
+}

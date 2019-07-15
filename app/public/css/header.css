@@ -1,0 +1,361 @@
+/* 头部 */
+
+header.fixed {
+   position: fixed;
+   top: 0;
+   z-index: 999;
+}
+
+.header-info {
+   width: 100%;
+   background: linear-gradient(#f1f1f1, #f1f1f1);
+   color: #BABABA;
+   height: 30px;
+   position: fixed;
+   top: 0;
+   z-index: 100;
+}
+
+.box-nav {
+   color: #333;
+   line-height: 0;
+   position: relative;
+}
+
+.address {
+   line-height: 30px;
+}
+
+.address .addr-edit {
+   padding: 0 3px;
+   border-radius: 3px;
+   cursor: pointer;
+   color: #919191;
+   line-height: 18px;
+   border: 1px solid #919191;
+}
+
+.address span {
+   display: inline-block;
+   margin-right: 10px;
+   color: #919191;
+}
+
+.trust {
+   position: absolute;
+   left: 180px;
+   top: 0;
+   color: #BFA69A;
+}
+
+.trust span {
+   display: inline-block;
+   line-height: 30px;
+   padding-left: 20px;
+   margin-left: 4px;
+   background: url(../images/scIndex/trust-3.png) no-repeat left center;
+   color: #919191;
+}
+
+.gonggao {
+   width: 260px;
+   height: 30px;
+   overflow: hidden;
+   position: absolute;
+   left: 790px;
+   top: 0;
+}
+
+.gonggao p {
+   line-height: 30px;
+   height: 30px;
+}
+
+.gonggao a {
+   display: inline-block;
+   color: #dbb191;
+}
+
+.gonggao a.slide {
+   animation: translatex 15s linear infinite;
+   animation-play-state: running;
+}
+
+.gonggao a.slide:hover{
+   animation-play-state: paused;
+}
+@keyframes translatex {
+   0% {transform: translateX(250px)}
+   100% {transform: translateX(-250px)}
+}
+
+.login-info {
+   width: 140px;
+   position: absolute;
+   line-height: 30px;
+   top: 0;
+   right: 0;
+}
+
+.login-info .login-link {
+   float: right;
+   width: 125px;
+   text-align: right;
+}
+
+.login-info .login-link>a,
+.login-info .login-link .line {
+   color: #919191;
+}
+
+.login-info .login-link .line {
+   margin: 0 15px;
+}
+
+.login-info .login-link>a:last-child {
+   color: #9D1D22;
+}
+
+.header-menu {
+   width: 100%;
+   height: 80px;
+   background: #fff;
+   position: fixed;
+   top: 30px;
+   z-index: 90;
+}
+
+.menu-box {
+   width: 100%;
+   height: 80px;
+   background: #fff;
+   box-shadow: 1px 1px 5px #ccc;
+}
+
+.logo {
+   float: left;
+   line-height: 0;
+   width: 234px;
+   margin-right: 65px;
+}
+
+.logo a {
+   display: block;
+   width: 100%;
+   height: 80px;
+   background: url(../images/scIndex/logo-2.png) no-repeat left center;
+   background-size: 100%;
+}
+
+.menu-nav {
+   width: 580px;
+   float: left;
+}
+
+.menu-nav li.drop-nav {
+   display: inline-block;
+   height: 80px;
+   margin-left: 0;
+   margin-right: 30px;
+   font-size: 14px;
+   line-height: 80px;
+}
+
+.menu-nav>li a {
+   color: #333;
+}
+
+.menu-nav .drop-nav p a {
+   padding-right: 10px;
+   background: url(../images/scIndex/icon-down-1.png) no-repeat center right;
+   display: block
+}
+
+.menu-nav>li:nth-child(5) a {
+   color: #9D1D22;
+}
+
+.menu-nav>li:nth-child(6) a {
+   color: #9D1D22;
+}
+
+.search-box {
+   height: 80px;
+   float: left;
+   padding-top: 21px;
+}
+
+.search-box .search-border {
+   border: 1px solid #e9e9e9;
+   width: 170px;
+   height: 36px;
+   border-radius: 4px;
+   background: #fff;
+   z-index: 2;
+}
+
+.search-border .search-txt {
+   width: 125px;
+   margin-top: 10px;
+   line-height: 100%;
+   margin-left: 10px;
+   color: #bbb;
+   font-size: 14px;
+   vertical-align: top;
+   border: none;
+   background: transparent none;
+}
+
+.search-border .search-icon {
+   display: inline-block;
+   width: 30px;
+   height: 100%;
+   cursor: pointer;
+   background: url(../images/scIndex/icon-search-3.png) no-repeat center center;
+}
+
+.shopcar {
+   float: right;
+   margin-top: 21px;
+   height: 36px;
+}
+
+.shopcar a {
+   display: inline-block;
+   border: 1px solid #e9e9e9;
+   border-radius: 5px;
+   padding-left: 35px;
+   background: url(../images/scIndex/icon-shopcar-4.png) no-repeat 10px center;
+   line-height: 35px;
+   margin-left: 3px;
+   color: #4A4041;
+}
+
+.shopcar a span {
+   margin-left: 7px;
+   margin-right: 16px;
+}
+
+/* 隐藏 导航 S */
+
+.dropdown-box {
+   width: 100%;
+   height: 0;
+   transition: .5s;
+   position: absolute;
+   left: 0;
+   top: 110px;
+   z-index: 50;
+   background: #999a9c;
+   opacity: .8;
+   overflow: hidden;
+}
+
+.nav-menu {
+   z-index: 999;
+   width: 1583px;
+}
+
+.nav-menu .dropdown-box ul {
+   margin: 0 auto;
+   font-size: 0;
+   line-height: 0;
+   text-align: center;
+
+}
+
+.nav-menu>li {
+   display: block;
+   margin-left: 0;
+   margin-right: 30px;
+   font-size: 14px;
+   line-height: 80px;
+   float: left;
+}
+
+.nav-menu li a:hover {
+   background: rgba(255, 255, 255, .5);
+}
+
+.nav-menu .dropdown-box .drop-opt {
+   display: inline-block;
+   width: 110px;
+   height: 125px;
+}
+
+.nav-menu .dropdown-box .drop-opt i {
+   display: block;
+   width: 100%;
+   height: 60px;
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+
+.nav-menu .dropdown-box .drop-opt a {
+   color: #fff;
+   display: block;
+   height: 125px;
+   padding-top: 20px;
+}
+
+.nav-menu>li a {
+   display: inline-block;
+   color: #333;
+   position: relative;
+   vertical-align: top;
+}
+
+.nav-menu .dropdown-box .drop-opt span {
+   line-height: 2;
+   font-size: 14px;
+}
+
+.nav-menu .dropdown-box .item-0 i {
+   background-image: url(../images/scIndex/item-tc-1.png);
+}
+
+.nav-menu .dropdown-box .item-1 i {
+   background-image: url(../images/scIndex/item-yyj-1.png);
+}
+
+.nav-menu .dropdown-box .item-2 i {
+   background-image: url(../images/scIndex/item-zj-1.png);
+}
+
+.nav-menu .dropdown-box .item-3 i {
+   background-image: url(../images/scIndex/item-xdg-1.png);
+}
+
+.nav-menu .dropdown-box .item-4 i {
+   background-image: url(../images/scIndex/item-rsq-1.png);
+}
+
+.nav-menu .dropdown-box .item-5 i {
+   background-image: url(../images/scIndex/item-zx-1.png);
+}
+
+.nav-menu .dropdown-box .item-6 i {
+   background-image: url(../images/scIndex/item-wbl-1.png);
+}
+
+.nav-menu .dropdown-box .item-7 i {
+   background-image: url(../images/scIndex/item-kx-1.png);
+}
+
+.nav-menu .dropdown-box .item-8 i {
+   background-image: url(../images/scIndex/item-xwj-1.png);
+}
+
+.nav-menu .dropdown-box .item-9 i {
+   background-image: url(../images/scIndex/item-zw-1.png);
+}
+
+.nav-menu .dropdown-box .item-10 i {
+   background-image: url(../images/scIndex/item-pj-1.png);
+}
+
+a.drop-h:hover .menu-nav .dropdown-box {
+   height: 125px;
+}
+
+/* 隐藏 导航 End */

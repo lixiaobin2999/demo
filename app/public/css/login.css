@@ -1,0 +1,124 @@
+.loginForm {
+   width: 1190px;
+   margin: 0 auto;
+   background-color: #fff;
+   padding: 0 30px;
+   margin-top: 16px;
+   padding-bottom: 42px;
+   border-radius: 4px;
+   color: #030303;
+}
+
+.login-header {
+   text-align: center;
+   font-size: 20px;
+   line-height: 66px;
+   border-bottom: 1px solid #efeff4;
+}
+ 
+.loginForm .formBody {
+   width: 34%;
+   margin: 0 auto;
+   margin-top: 30px;
+}
+
+.loginForm .formLine {
+   margin-bottom: 12px;
+}
+
+.loginForm .formLine .input100 {
+   width: 100%;
+   border: 1px solid #f1f1f1;
+   background-color: #f1f1f1;
+   height: 50px;
+   line-height: 50px;
+   border-radius: 5px;
+   padding: 0 16px;
+   font-size: 14px;
+}
+
+.loginForm .formLine .input50 {
+   width: 46%;
+   border: 1px solid #f1f1f1;
+   background-color: #f1f1f1;
+   height: 50px;
+   line-height: 50px;
+   border-radius: 5px;
+   padding: 0 16px;
+   font-size: 14px;
+   vertical-align: top;
+}
+
+.loginForm .formLine .yzm {
+   float: right;
+   cursor: pointer;
+   letter-spacing: 5px;
+   font-family: Lobster;
+   font-size: 21px;
+   background: mistyrose; 
+   color: cadetblue;
+}
+
+.loginForm .formLine input.btn100 {
+   width: 100%;
+   height: 50px;
+   border-radius: 5px;
+   box-sizing: border-box;
+   padding: 0 16px;
+   font-size: 14px;
+   vertical-align: top;
+   color: #5b5b5b;
+   border: 1px solid  #c7c7cd;
+   background-color: #c7c7cd;
+}
+.loginForm .other a.input100{
+   display: block;
+   border: 1px solid  #bbb;
+   background-color: #fff;
+   line-height: 47px;
+   text-align: center;
+   font-size: 12px;
+   color:#ff6900;
+
+}
+.loginForm .other a.input100 span{
+   color: #5b5b5b
+}
+.loginForm .formLine span{
+   font-size: 12px;
+   color: #8f8e94;
+   vertical-align: middle;
+}
+.loginForm .formLine a.wx{
+   width: 27px;
+   height: 27px;
+   vertical-align: middle;
+   border-radius: 5px;
+   display: inline-block;
+   background:url(../images/scIndex/icon/wx.jpg);
+   background-size: 100%;
+}
+
+.checkboxLabel {
+   font-size: 12px;
+   color: #bbb;
+}
+
+.checkboxLabel input {
+   vertical-align: middle;
+}
+
+.checkboxLabel a {
+   color: #0076ff;
+}
+
+.regForm .other {
+   text-align: center;
+   margin-top: 18px;
+}
+.regForm .other span{
+   font-size: 12px;
+   color: #8f8e94;
+}
+
+

@@ -1,0 +1,403 @@
+﻿/*
+    定义全局api
+*/
+var api = {
+    url: "//service.efotile.com/",//接口域名
+    //loc:"http://test03.efotile.com/",//网站域名
+    //loc: "http://www.efotile.com/",//网站域名
+    loc: location.protocol + "//" + location.host + '/',//网站域名
+    imgSev: '//img001.efotile.com/',//图片服务器
+    //imgSevTest: 'http://122.114.92.80:8090/',//图片服务器
+    //imgSev: 'http://test01.efotile.net/UploadFiles/',
+    action: {//api方法列表
+        'banner': 'GetAdList',//广告
+        'menu': 'GetMenuList',//菜单
+        'tehui': 'GetActivityIndexList',//限时特惠
+        'redpacketList': "CouponConReceive",//可领取
+        'myredpacketList': 'GetCanCouList',//可使用
+        'othorredpacket': "CouponAlready",//其他
+        'getredpacket': "ReceiveCashCode",//领取
+        'delredpacket': "DelCoupon",//删除
+        'canshu': 'GetProParamList',//参数
+        'hotsale': 'GetHotSalerList',//热卖
+        'notice': 'GetNewList',//文章
+        'logad': 'AdvertisementClickCount'//广告点击量
+    },
+    fn: {
+        'banner': 'Advertising/AdvertisingInterface.aspx',
+        'menu': 'Product/ProductInterface.aspx',
+        'tehui': 'Product/ProductInfoInterface.aspx',
+        'redpacket': "newhandle.aspx",
+        'canshu': 'Product/ProductSingleInterface.aspx',
+        'hotsale': 'Product/ProductInfoInterface.aspx',
+        'notice': 'Notice/GetNoticeInterface.aspx',
+        'logad': 'newhandle.aspx'//广告点击量
+    }
+};
+$(function () {
+    //关联错误号和给用户的提示信息
+    var errMsg = {
+        '101': '访问连接超时',
+        '102': '安全验证非法',
+        '103': '密钥非法',
+        '104': '未登录',
+        '105': '无数据'
+    };
+
+    /*
+        错误提示
+        --输入参数
+            err: 错误号（必须），
+            fn:回调函数（可无）
+    */
+    function showerror(err, fn) {
+        if (err) {
+            alert(errMsg['' + err]);
+        }
+        if (fn && typeof (fn) == 'function') {
+            fn();
+        }
+    }
+    //异步数据的dom模板列表，根据返回数据的字段名构建
+    $.tmpNode = {
+        'menu': '<li class="drop-opt item-{{ID}}">' +
+                '<a href="' + api.loc + 'producttype/protype-{{ID}}.html" title="方太{{CategoryName}}"><i></i><span>{{CategoryName}}</span></a>' +
+                '</li>',
+        'A-01': '<li class="item" style="background: {{Backcloor}};">' +
+                '<div class="item-bg">' +
+                    '<a adId="{{ID}}" class="" style="background: url(' + api.imgSev + '{{UploadImgName}}) no-repeat center center;" target="{{ADTarget}}" href="{{LinkURL}}"></a>' +
+                '</div>' +
+                '<a adId="{{ID}}" target="{{ADTarget}}" class="item-cnt" href="{{LinkURL}}">' +
+                    '<img width="1920" src="' + api.imgSev + '{{UploadImg}}" alt="{{ADTitle1}}">' +
+                    '<span class="hide">{{ADTitle}}</span>' +
+                '</a>' +
+            '</li>',
+        'A-02': '<li class="item-banner">' +
+                  '<a adId="{{ID}}" href="{{LinkURL}}" target="{{ADTarget}}" class="animBorder">' +
+                    '<img src="' + api.imgSev + '{{UploadImg}}" alt="{{ADTitle}}">' +
+                    '<span class="title">{{ADTitle}}</span>' +
+                    '<span class="dec">{{ADTitle1}}</span>' +
+                  '</a>' +
+                '</li>',
+        'A-03': '<li class="item-banner">' +
+                  '<a adId="{{ID}}" href="{{LinkURL}}" target="{{ADTarget}}" class="animBorder">' +
+                    '<img src="' + api.imgSev + '{{UploadImg}}" alt="{{ADTitle}}">' +
+                  '</a>' +
+                '</li>',
+        'A-08': '<div class="item-banner">{{ADCode}}</div>',
+        'tehui': '<div class="item-box" data-type="{{TypeID}}" data-id={{PoGID}}>' +
+                '<div class="img-box">' +
+                  '<a adId="{{ID}}" href="' + api.loc + 'productdetail/_t-{{TypeID}}/_proid-{{PoGID}}.html" target="_blank" class="largeImg" title="{{Title}}">' +
+                    '<img src="' + api.imgSev + '{{Pic}}" width="250" height="250" alt="{{Title}}">' +
+                    '<img class="big-img" style="display: none" src="' + api.imgSev + '{{Pic1}}" width="250" alt="{{Title}}">' +
+                    '<img class="big-img" style="display: none" src="' + api.imgSev + '{{Pic2}}" width="250" alt="{{Title}}">' +
+                    '<img class="big-img" style="display: none" src="' + api.imgSev + '{{Pic3}}" width="250" alt="{{Title}}">' +
+                  '</a>' +
+                  '<div class="img-nav">' +
+                    '<img src="' + api.imgSev + '{{Pic1}}" width="40" alt="{{Title}}">' +
+                    '<img src="' + api.imgSev + '{{Pic2}}" width="40" alt="{{Title}}">' +
+                    '<img src="' + api.imgSev + '{{Pic3}}" width="40" alt="{{Title}}">' +
+                  '</div>' +
+                '</div>' +
+                '<div class="txt-box">' +
+                  '<h2 class="item-name"><a href="' + api.loc + 'productdetail/_t-{{TypeID}}/_proid-{{PoGID}}.html" target="_blank" title="{{Title}}">{{Title}}</a></h2>' +
+                  '<div class="item-doc"><a href="' + api.loc + 'productdetail/_t-{{TypeID}}/_proid-{{PoGID}}.html" target="_blank" title="{{Title}}">{{SubTitle}}</a></div>' +
+                  '<div class="item-djs J_countdown" data-diff="{{StartDate}}" data-diffe="{{EndDate}}">倒计时：<span>0</span>天<span>0</span>小时<span>0</span>分<span>0</span>秒</div>' +
+                  '<div class="item-actPrice">特惠价：<b><i class="yen">&yen;</i>{{ProductPrice}}</b><a href="' + api.loc + 'productdetail/_t-{{TypeID}}/_proid-{{PoGID}}.html" class="btn-link" target="_blank">即将开始</a></div>' +
+                '</div>' +
+              '</div>',
+        'canshu': '<div class="dim-box">' +
+                    '<div class="dim-item-type">产品型号</div>' +
+                    '<dl class="dim-item">' +
+                        '<dt class="dim-name hide"></dt>' +
+                        '<dd class="dim-value">{{ProductCode}}</dd>' +
+                    '</dl>' +
+                    '[[proCs]]' +
+                '</div>',
+        'hotsale': '<div class="item-box box-shadow" data-id="{{PoGID}}" data-type="{{TypeID}}">' +
+                        '<div class="img-box">' +
+                            '<a class="animBorder" href="' + api.loc + 'productdetail/_t-{{TypeID}}/_proid-{{PoGID}}.html" target="_blank" class="largeImg" title="{{Title}}"><img src="' + api.imgSev + '{{Pic}}" width="220" alt="{{Title}}"></a>' +
+                        '</div>' +
+                        '<div class="txt-box">' +
+                            '<h2 class="item-name"><a href="' + api.loc + 'productdetail/_t-{{TypeID}}/_proid-{{PoGID}}.html" target="_blank" title="{{Title}}">{{Title}}</a></h2>' +
+                            '<div class="item-doc"><a href="' + api.loc + 'productdetail/_t-{{TypeID}}/_proid-{{PoGID}}.html" target="_blank" title="{{Title}}">{{SubTitle}}</a></div>' +
+                            '<div class="item-actPrice">' +
+                                '<b><i class="yen">¥</i>{{price}}</b>' +
+                            '</div>' +
+                            '<div class="act-btn">' +
+                                '<a href="' + api.loc + 'productdetail/_t-{{TypeID}}/_proid-{{PoGID}}.html" class="btn-link" target="_blank" title="{{Title}}">立即购买</a>' +
+                                '<span class="btn-fav"><i class="fav-icon"></i></span>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>',
+        'notice-01':'<li><div class="q"><a href="' + api.loc + 'messagedetail/_code/A-01/id/{{ID}}.html" title="{{Title}}" target="_new">Q：{{Title}}</a></div>' +
+                    '<div class="a">{{Summary}}</div></li>',
+        'notice-02': '<li><a href="' + api.loc + 'messagedetail/_code/A-02/id/{{ID}}.html" title="{{Title}}" target="_new">{{Title}}</a></li>',
+        'notice-03': '<li><a href="' + api.loc + 'messagedetail/_code/A-03/id/{{ID}}.html" title="{{Title}}" target="_new">{{Title}}</a></li>',
+        'getredpacket': '<div>' +
+                           '<div class="takebag">' +
+                               '<img src="images/v3.0/{{valtypeid}}_{{TypeValue}}.png" width="132" height="59" />' +
+                               '<p class="fieldName">截止日期：</p>' +
+                               '<span class="fieldValue endDate">{{EndDate}}</span>' +
+                               '<p class="fieldName endDate">使用条件:</p>' +
+                               '<span class="fieldValue useRequire" title="{{Info}}">{{Info}}</span>' +
+                               '<div class="btndiv01"><a class="getredpacket" href="javascript:void(0)" data-id="{{ID}}" data-s="{{TypeID}}{{CodeLength}}{{StartWords}}{{Number}}">立即领取</a></div>' +
+                           '</div>' +
+                       '</div>',
+        'myredpacket': '<div class="takebag">' +
+                               '<img src="images/v3.0/{{TypeID}}_{{TypeValue}}.png" width="132" height="59" />' +
+                               '<p class="fieldName">截止日期：</p>' +
+                               '<span class="fieldValue endDate">{{EndDate}}</span>' +
+                               '<p class="fieldName">使用条件:</p>' +
+                               '<span class="fieldValue useRequire" title="{{info}}">{{info}}</span>' +
+                               '<p class="txtcode">红包编码：{{Code}}</p>' +
+                               '<div class="btndiv02"><a class="getredpacket" href="/" data-code="{{TypeID}}{{CodeLength}}{{StartWords}}{{Number}}">去使用</a></div>' +
+                           '</div>',
+        'disredpacket': '<div class="takebag" >' +
+                               '<span class="spandel" data-id="{{ID}}"></span>' +
+                               '<img src="images/v3.0/{{TypeID}}_{{TypeValue}}.png" width="132" height="59" />' +
+                               '<p class="fieldName">截止日期：</p>' +
+                               '<span class="fieldValue endDate">{{EndDate}}</span>' +
+                               '<p class="fieldName">使用条件:</p>' +
+                               '<span class="fieldValue useRequire" title="{{info}}">{{info}}</span>' +
+                               '<p class="txtcode">红包编码：{{Code}}</p>' +
+                               '<div class="btndiv02"><a class="getredpacket" href="javascript:void(0)" data-code="{{TypeID}}{{CodeLength}}{{StartWords}}{{Number}}">不可用</a></div>' +
+                           '</div>'
+    };
+
+    /*
+        异步获取数据，构建广告位
+        --输入参数
+            file:api.fn['banner'],//接口文件
+            tmp:'A-01',//广告位编码
+            data:{//入参
+                Code:"A-01",//（广告位编码）
+                readsource:"1"//（限时特惠渠道，1：pc,2:手机）
+            },
+            nd:null,//显示内容位置
+            num:3//显示个数
+            fn:回调函数（可无）;
+    */
+    $.fn.ad = function (parm, fn) {
+        var defaults = {
+            action: 'GetAdList'//接口的action(必须,默认广告位);
+        };
+        var inParm = $.extend(defaults, parm.data || {}, {_t:new Date().getTime()});
+        $.ajax({
+            url: (parm.url ? parm.url : api.url) + parm.file,//拼接url;
+            data: inParm,
+            dataType: parm.dataType || 'jsonp',//返回jsonp;
+            type: 'get',
+            success: function (d) {//接口调用成功;
+                if (d) {//成功获取返回数据;
+                    if (d.Status == 100) {//数据正常;
+                        var strHtml = "";//定义初始变量，--广告位代码的字符串拼接;
+                        d.data && $.each(d.data, function (i, v) {//遍历取得的数据
+                            //使用对应的模板
+                            if (typeof parm.num == "number" && i >= parm.num) {
+                                return false;//限制页面显示数据个数
+                            }
+                            var str = $.tmpNode[parm.tmp].replace(/\{\{[\w]+\}\}/ig, function (e) {//将{{字段名}}替换成对应的字段值
+                                var _e = e.substring(2, e.length - 2);//去掉{{字段名}}的{{}}；
+                                if (_e in v) {
+                                    if (!v[_e] && v[_e] !== 0) {
+                                        return '';
+                                    }
+                                    if (parm.data.action == "GetNewList") {
+                                        return v[_e].toString().replace(/^<p>+/, '').replace(/<\\p>+$/, '');
+                                    }
+                                    return v[_e].toString().replace(/^[\s]+/, '').replace(/[\s]+$/, '');//返回对应字段值（如果有值）
+                                } else {
+                                    return _e;
+                                }
+
+                            });
+                            strHtml += str;//拼接字符串
+                        });
+                        if (parm.nd) {
+                            var adHtml = $(strHtml).appendTo(parm.nd);//把字符串插入页面对应位置(传入参数)
+                        } else {
+                            var adHtml = $(strHtml).appendTo('body');
+                        }
+                    } else {//数据错误
+                        showerror(d.Status);//调用错误提示
+                    }
+                } else {
+                    //console.log('接口错误');
+                }
+                if (fn && typeof (fn) == 'function') {
+                    //如果有回调函数，执行回调
+                    if (d === null && d == "undefind") {
+                        fn();
+                    } else {
+                        fn(d);
+                    }
+                }
+            },
+            error: function () {//接口调用失败
+                //console.log('网络错误');
+            }
+        });
+
+    };
+    // $.fn.ad({
+    // file:api.fn['banner'],//接口文件
+    // tmp:'A-01',//广告位编码
+    // data:{Code:"A-01"},//入参（广告位编码）
+    // nd:null,//显示内容位置
+    // num:3//显示个数
+    // },function(){});//回调方法
+
+
+    $.fn.productSing = function (parm, fn) {
+        var defaults = {
+            action: 'GetProParamList'//接口的action(必须,默认广产品);
+        };
+        var inParm = $.extend(defaults, parm.data || {}, {_t:new Date().getTime()});
+        $.ajax({
+            url: (parm.url ? parm.url : api.url) + parm.file,//拼接url;
+            data: inParm,
+            dataType: parm.dataType || 'jsonp',//返回jsonp;
+            type: 'get',
+            success: function (d) {//接口调用成功;
+                if (d) {//成功获取返回数据;
+                    if (d.Status == 100) {//数据正常;
+                        //console.log(d.data);
+                        var strHtml = "";//定义初始变量，--代码的字符串拼接;
+                        d.data && $.each(d.data, function (i, v) {//遍历取得的数据
+                            //使用对应的模板
+                            if (typeof parm.num == "number" && i >= parm.num) {
+                                return false;//限制页面显示数据个数
+                            }
+                            var str = $.tmpNode[parm.tmp].replace(/\{\{[\w]+\}\}/ig, function (e) {//将{{字段名}}替换成对应的字段值
+                                var _e = e.substring(2, e.length - 2);//去掉{{字段名}}的{{}}；
+                                if (_e in v) {
+                                    if (!v[_e] && v[_e] !== 0) {
+                                        return '';
+                                    }
+                                    return v[_e].replace(/^[\s]+/, '').replace(/[\s]+$/, '');//返回对应字段值（如果有值）
+                                } else {
+                                    return _e;
+                                }
+                            });
+                            var strList = '';
+                            $.each(v.ParamTypeList, function (x, y) {
+                                strList += '<div class="divider"></div><div class="dim-item-type">' + y.Title + '</div>';
+                                strList += '<dl class="dim-item">';
+                                $.each(y.ParamInfoList, function (m, n) {
+                                    if (n.Info && n.Info !== "") {
+                                        strList += '<dt class="dim-name more-info" data-idx="' + m + '">' + n.Title + '</dt><dd class="dim-value">' + n.Value + '</dd><dd class="more-info-value val-' + m + ' hide">' + n.Info + '</dd>';
+                                    } else {
+                                        strList += '<dt class="dim-name">' + n.Title + '</dt><dd class="dim-value">' + n.Value + '</dd>';
+                                    }
+                                });
+                                strList += '</dl>';
+                            });
+                            str = str.replace(/\[\[proCs\]\]/, strList);
+                            strHtml += str;//拼接字符串
+                        });
+                        if (parm.nd) {
+                            var adHtml = $(strHtml).insertBefore(parm.nd);//把字符串插入页面对应位置(传入参数)
+                        } else {
+                            var adHtml = $(strHtml).appendTo('body');
+                        }
+                    } else {//数据错误
+                        showerror(d.Status);//调用错误提示
+                    }
+                } else {
+                    //console.log('接口错误');
+                }
+                if (fn && typeof (fn) == 'function') {
+                    //如果有回调函数，执行回调
+                    if (d === null && d == "undefind") {
+                        fn();
+                    } else {
+                        fn(d);
+                    }
+                }
+            },
+            error: function () {//接口调用失败
+                //console.log('网络错误');
+            }
+        });
+
+    };
+
+    $.fn.getredpacketList = function (parm, fn) {
+        var defaults = {
+            action: 'CouponConReceive'//接口的action(必须);
+        };
+        var inParm = $.extend(defaults, parm.data || {}, { _t: new Date().getTime() });
+        $.ajax({
+            url: (parm.url ? parm.url : api.url) + parm.file,//拼接url;
+            data: inParm,
+            dataType: parm.dataType || 'jsonp',//返回jsonp;
+            type: 'get',
+            success: function (d) {//接口调用成功;
+                if (d !== null && d != "undefined") {//成功获取返回数据;
+                    if (typeof d == "string" && d === '0') {//未登录
+                        location.href = api.loc + 'login.aspx?refurl=' + location.href.replace('?', '%tf%').replace('&', '%ft%');
+                    } else if (d.length > 0) {//有可以领取的红包
+                        var strHtml = "";
+                        $.each(d, function (i, v) {
+                            if (i % 4 === 0 && inParm.action == "CouponConReceive") {
+                                strHtml += '<li><div class="scorlldiv">';
+                            }
+                            var strtmp = $.tmpNode[parm.tmp].replace(/{\{[\w]+\}\}/g, function (e) {
+                                var _e = e.substring(2, e.length - 2);//去掉{{字段名}}的{{}};
+                                if (_e in v) {
+                                    if (!v[_e] && v[_e] !== 0) {
+                                        return '';
+                                    }
+                                    if (_e == "EndDate") {
+                                        v[_e] = v[_e].replace('T', ' ');
+                                    }
+                                    if (_e == "StartWords") {
+                                        v[_e] = v[_e].substring(0, 1);
+                                    }
+                                    return v[_e].toString().replace(/^[\s]+/, '').replace(/[\s]+$/, '');//返回对应字段值（如果有值）
+                                } else {
+                                    return _e;
+                                }
+                            });
+                            strHtml += strtmp;
+                            if ((i == d.length || i % 4 == 3) && inParm.action == "CouponConReceive") {
+                                strHtml += '</div></li>';
+                            }
+                        });
+                        if (parm.nd) {
+                            var adHtml = $(strHtml).appendTo(parm.nd);//把字符串插入页面对应位置(传入参数)
+                        } else {
+                            var adHtml = $(strHtml).appendTo('body');
+                        }
+                        if (inParm.action == "CouponConReceive") {
+                            if ($('.Isreceive li').size() === 0) {
+                                $('.dot-navigation').addClass('hide');
+                                $('.arrow-navigation').addClass('hide');
+                                $('.Isreceive').hide();
+                            } else if ($('.Isreceive li').size() < 2) {
+                                $('.dot-navigation').addClass('hide');
+                                $('.arrow-navigation').addClass('hide');
+                            } else {
+                                $('.Isreceive').show();
+                            }
+                        }
+                    }
+                } else {
+                    //console.log('接口错误');
+                }
+                if (fn && typeof (fn) == 'function') {
+                    //如果有回调函数，执行回调
+                    if (d === null && d == "undefind") {
+                        fn();
+                    } else {
+                        fn(d);
+                    }
+                }
+            },
+            error: function () {//接口调用失败
+                //console.log('网络错误');
+            }
+        });
+    };
+});

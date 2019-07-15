@@ -1,0 +1,856 @@
+* {
+   box-sizing: content-box
+}
+
+body {
+   background: #fff;
+}
+
+.marginY-2 {
+   margin-bottom: 15px;
+   margin-top: 15px;
+}
+
+.border-right {
+   border-right: 1px dotted #6c757d;
+}
+
+.w-1170 {
+   width: 1170px;
+   border-bottom: 1px solid #e6e6e6;
+   margin: 0 auto;
+}
+
+.list-mt {
+   padding-top: 15px;
+}
+
+.mr-1 {
+   margin-right: 10px;
+}
+
+.mr-2 {
+   margin-right: 20px;
+}
+
+
+.mr-45px {
+   margin-right: 45px;
+}
+
+
+/* 导航 S */
+.bread-header {
+   float: left;
+   list-style: none;
+}
+
+.bread-header>.bread-item {
+   float: left;
+}
+
+/* 导航头部-左 */
+.bread-header-left {
+   margin-left: 205px;
+   margin-top: 18px;
+}
+
+/* 导航头部-中 */
+.bread-header-middle {
+   margin-left: 360px;
+   margin-top: 30px;
+}
+
+.bread-header-middle>.middle_mr {
+   margin-right: 40px;
+}
+
+/* 导航头部-右 */
+.bread-header-right {
+   margin-left: -10px;
+   margin-top: 20px;
+   position: relative;
+}
+
+.bread-header-right>.right_mr {
+   margin-right: 20px;
+}
+
+/* 头部右边 */
+
+/* 方太商城 */
+.bread-header-right>.border-style {
+   width: 105px;
+   height: 38px;
+   border: 1px solid #000;
+   border-radius: 50px 50px 50px 50px;
+   text-align: center;
+   line-height: 38px;
+   color: black;
+   font-weight: 900;
+   font-size: 15px;
+}
+
+.my_top_a {
+   color: black;
+   font-weight: 900;
+   font-size: 14px;
+}
+
+.my_top_a:hover {
+   color: #aa001a;
+}
+
+.iocn_abs1 {
+   position: absolute;
+   top: 0px;
+   left: 130px;
+}
+
+.iocn_abs2 {
+   position: absolute;
+   top: 0px;
+   left: 188px;
+}
+
+.iocn_abs3 {
+   position: absolute;
+   top: 0px;
+   left: 246px;
+}
+
+/* 搜索图标 */
+.my_bg_img1 {
+   width: 38px;
+   height: 38px;
+   background-position: center center;
+   background: url(../images/guanwang/index/search.png) no-repeat;
+   cursor: pointer;
+   transition: 0.5s;
+
+}
+
+.my_bg_img1:hover {
+   width: 36px;
+   height: 36px;
+   background: url(../images/guanwang/index/search2.png) no-repeat;
+   background-position: center center;
+   transition: 0.5s;
+}
+
+/* 微信图标 */
+.my_bg_img2 {
+   width: 38px;
+   height: 38px;
+   background-position: center center;
+   cursor: pointer;
+   transition: 0.5s;
+   background: url(../images/guanwang/index/chat.png) no-repeat;
+}
+
+.my_bg_img2:hover {
+   width: 36px;
+   height: 36px;
+   background: url(../images/guanwang/index/chat2.png) no-repeat;
+   transition: 0.5s;
+   background-position: center center;
+}
+
+/* 购物车图标 */
+
+.my_bg_img3 {
+   width: 38px;
+   height: 38px;
+   background-position: center center;
+   cursor: pointer;
+   transition: 0.5s;
+   background: url(../images/guanwang/index/cart.png) no-repeat;
+}
+
+.my_bg_img3:hover {
+   width: 36px;
+   height: 36px;
+   background-position: center center;
+   background: url(../images/guanwang/index/cart2.png) no-repeat;
+   transition: 0.5s;
+
+}
+
+#product-box {
+   overflow: hidden;
+   /* height:500px; */
+   position: absolute;
+   background: #f3f4f6;
+   width: 100%;
+   /* display: none */
+}
+
+#product-box .pord_nav {}
+
+/* 导航END */
+/* 轮播图位置 */
+.carousel {
+   width: 1583px;
+   overflow: hidden;
+}
+
+.video-width {
+   width: 7915px;
+}
+
+.video-top>.my_img {
+   width: 1583px;
+}
+
+.clearfix::after {
+   content: "";
+   clear: both;
+   display: block;
+}
+
+.nav_bg {
+   width: 1170px;
+   margin: 0px auto;
+}
+
+.nav_list li {
+   width: 79px;
+   text-align: center;
+   padding: 12px 25px;
+   margin-top: 30px;
+   margin-bottom: 30px;
+}
+
+.nav_list li.border {
+   border-right: 1px dotted #6c757d;
+}
+
+/* 中部导航的背景图/精灵图 */
+.nav_list li a {
+   background: url(../images/guanwang/index/menu_icon.png) no-repeat;
+   display: block;
+   padding-top: 75px;
+   font-size: 12px;
+   width: 75px;
+   text-align: center;
+   color: #6c757d;
+}
+
+/* 中部导航精灵图背景位置 */
+.nav_list li .n1 {
+   background-position: -5px 0;
+}
+
+.nav_list li .n1:hover {
+   background-position: -5px -154px;
+   color: #bc9882;
+}
+
+.nav_list li .n2 {
+   background-position: -137px 0
+}
+
+.nav_list li .n2:hover {
+   background-position: -137px -154px;
+   color: #bc9882;
+}
+
+.nav_list li .n3 {
+   background-position: -270px 1px;
+}
+
+.nav_list li .n3:hover {
+   background-position: -270px -152px;
+   color: #bc9882;
+}
+
+.nav_list li .n4 {
+   background-position: -407px 1px;
+}
+
+.nav_list li .n4:hover {
+   background-position: -408px -152px;
+   color: #bc9882;
+}
+
+.nav_list li .n5 {
+   background-position: -540px 1px;
+}
+
+.nav_list li .n5:hover {
+   background-position: -540px -152px;
+   color: #bc9882;
+}
+
+.nav_list li .n6 {
+   background-position: -673px 1px;
+}
+
+.nav_list li .n6:hover {
+   background-position: -673px -152px;
+   color: #bc9882;
+}
+
+.nav_list li .n7 {
+   background-position: -805px 1px;
+}
+
+.nav_list li .n7:hover {
+   background-position: -805px -151px;
+   color: #bc9882;
+}
+
+.nav_list li .n8 {
+   background-position: -938px 0
+}
+
+.nav_list li .n8:hover {
+   background-position: -938px -154px;
+   color: #bc9882;
+}
+
+.nav_list li .n9 {
+   background-position: -1076px 0;
+   border: transparent
+}
+
+.nav_list li .n9:hover {
+   background-position: -1076px -154px;
+   color: #bc9882;
+}
+
+/* 中部导航的背景图/精灵图 END */
+
+
+/* 中部大图左右总大小 */
+.index-area {
+   width: 1060px;
+   margin: 30px auto;
+}
+
+.index-left,
+.index-right {
+   width: 49%;
+   float: left;
+}
+
+.index-left {
+   margin-right: 20px;
+}
+
+.index-area a img {
+   width: 100%;
+   border-radius: 4px;
+}
+
+/* 更多/帮助/咨询 */
+.box_main {
+   width: 1170px;
+   margin: 30px auto;
+
+}
+
+.box_left,
+.box_center,
+.box_right {
+   width: 33%;
+   text-align: center;
+   float: left;
+   margin: 30px auto;
+}
+
+.my_font_small {
+   font-size: 12px;
+   color: #8b7f7b;
+}
+
+/* 更多关于系列大按钮 */
+a.box_area_btn {
+   display: block;
+   background: #952225;
+   color: #fff;
+   display: inline-block;
+   height: 50px;
+   line-height: 50px;
+   background: #222;
+   color: #d1be9c;
+   width: 150PX;
+   font-size: 12px;
+   border-radius: 3px;
+}
+
+.box_area_btn {
+   transition: 1s;
+}
+
+.box_area_btn:hover {
+   background: #952225;
+   color: #fff;
+   transition: 1s;
+}
+
+.box_h4_color {
+   color: #222;
+}
+
+/* 中部输入框大小 */
+.my_input_size {
+   width: 250px;
+   height: 40px;
+   display: inline-block;
+   border-radius: 4px;
+   background: #f8f8f8;
+   border: 1px solid #d9d9d9;
+   outline: 0;
+   padding-left: 8px;
+}
+
+.my_input_pos {
+   position: relative;
+}
+
+/* 中部的搜索按钮 */
+.ss {
+   height: 32px;
+   line-height: 32px;
+   width: 58px;
+   background: #222;
+   position: absolute;
+   right: 67px;
+   top: 20px;
+   padding: 0;
+   text-indent: 0;
+   border: 0;
+   color: #d1be9c;
+   cursor: pointer;
+   transition: 1s;
+
+   /* display: none; */
+}
+
+.ss:hover {
+   background: #952225;
+   color: #fff;
+   transition: 1s;
+}
+
+.bg-color {
+   background: #f5f5f5;
+}
+
+/* 脚部 */
+.footer_w {
+   width: 1171px;
+   margin: 0px auto;
+}
+
+.info {
+   text-align: left;
+   overflow: hidden;
+   border-bottom: 1px solid #e5e5e5;
+   padding-bottom: 40px;
+}
+
+.info a.my_font_small {
+   line-height: 25px;
+}
+
+.info a.my_font_small:hover {
+   color: #222;
+}
+
+.list_title {
+   width: 158px;
+   padding: 30px 0px;
+   border-bottom: 1px solid #e5e5e5;
+   color: #888896;
+}
+
+/* 底部加入方太 */
+.list_title_last {
+   padding: 30px 0px;
+   color: #888896;
+   border-bottom: 1px solid #e5e5e5;
+}
+
+.info_b {
+   border-bottom: 1px solid #e5e5e5;
+   padding-top: 30px;
+   overflow: hidden;
+   padding-bottom: 30px;
+}
+
+/* 底部消息 */
+.f_info {
+   line-height: 21px;
+}
+
+/* 底部字体大小 */
+.f_f_size {
+   font-size: 12px;
+   color: #888896;
+}
+
+.my_a2 {
+   font-size: 15px;
+   font-weight: 900;
+}
+
+/* .bg-white {
+   background: #fff;
+} */
+
+/* 幸福的智慧红 */
+.xinfu_red {
+   color: #aa001a;
+   font-size: 12px;
+}
+
+/* 顶部导航隐藏隐藏 */
+.aside_title_w {
+   width: 981px;
+   margin: 0 auto;
+}
+
+/* 顶部导航精灵图 */
+.nav_list2 li .n1 {
+   background-position: 0px 0;
+}
+
+.nav_list2 li .n2 {
+   background-position: -38px 0
+}
+
+.nav_list2 li .n3 {
+   background-position: -76px 0
+}
+
+.nav_list2 li .n4 {
+   background-position: -114px 0
+}
+
+.nav_list2 li .n5 {
+   background-position: -152px 0
+}
+
+.nav_list2 li .n6 {
+   background-position: -190px 0
+}
+
+.nav_list2 li .n7 {
+   background-position: -228px 0
+}
+
+.nav_list2 li .n8 {
+   background-position: -266px 0
+}
+
+.nav_list2 li .n9 {
+   background-position: -304px 0;
+   border: transparent
+}
+
+/* 隐藏导航大模块 */
+.aside_title_w .nav_list2 li {
+   width: 105px;
+   text-align: center;
+   padding: 0px 0px;
+   margin-top: 18px;
+   margin-bottom: 18px;
+}
+
+.nav_list2 li a::after {
+   content: '';
+   position: absolute;
+   right: 0;
+   top: 4px;
+   width: 1px;
+   height: 32px;
+   overflow: hidden;
+   background: #888896;
+}
+
+/* 隐藏导航的背景图/精灵图 */
+.nav_list2 li a {
+   display: block;
+   padding-top: 0px;
+   font-size: 12px;
+   width: 100%;
+   text-align: center;
+   color: #000;
+   opacity: 0.5;
+   position: relative;
+}
+
+.nav_list2 li a:hover {
+   opacity: 1;
+   color: #aa001a;
+   font-weight: 600;
+}
+
+.nav_list2 li a i {
+   display: block;
+   width: 38px;
+   height: 38px;
+   background: url(../images/guanwang/index/nav_icon_sprites.png) no-repeat center;
+   text-align: center;
+   margin: 0 auto;
+   overflow: hidden;
+}
+
+.mqNav {
+   background: #fff;
+   position: absolute;
+   top:169px;
+   width: 100%;
+}
+
+.prod_nav {
+   min-height: 260px;
+
+}
+
+.wrap {
+   width: 250px;
+   height: 80px;
+   margin-bottom: 15px;
+}
+
+/* 商品列表 */
+a.quick-link {
+   padding-right: 26px;
+   width: auto;
+   height: auto;
+   display: inline-block;
+   line-height: 16px;
+   color: #1a193a;
+   text-align: left;
+   font-size: 14px;
+   font-weight: 600;
+   background: url(../images/guanwang/index/下载.png) no-repeat center right;
+}
+
+.prod-card a.comm_color {
+   display: block;
+   min-height: 280px;
+   text-align: center;
+   position: relative;
+   transition: .2s;
+   color: #555;
+}
+
+.prod-card a.comm_color:hover {
+   transition: .2s;
+   color: #921d21;
+}
+
+/* 商品列表/块 */
+.prod-box {
+   width: 175px;
+   height: 175px;
+   background: #f3f4f6;
+   border-radius: 4px;
+   text-align: center;
+   line-height: 175px;
+}
+
+.prod-box>img {
+   vertical-align: middle;
+}
+
+.prod-name {
+   margin-top: 8px;
+   margin-bottom: 12px;
+   font-weight: 600;
+   font-size: 14px;
+   line-height: 18px;
+}
+
+/* 商品标签 */
+.tag-item {
+   display: inline-block;
+   height: 20px;
+   padding-left: 3px;
+   padding-right: 3px;
+   line-height: 20px;
+   color: #ababab;
+   font-size: 12px;
+   border: 1px solid #f0f0ee;
+   border-radius: 3px;
+}
+
+.info-mt {
+   margin-top: 48px;
+}
+
+.tag-info {
+   display: inline-block;
+   width: 42px;
+   height: 20px;
+   color: #fff;
+   line-height: 20px;
+   font-size: 12px;
+   text-align: center;
+   color: #921d21;
+   border: 1px solid #921d21;
+   border-radius: 3px;
+}
+
+/* 标签定位 */
+.tag-box {
+   display: inline-block;
+   width: 150%;
+   position: absolute;
+   left: -25%;
+   top: 210px;
+}
+
+/* 服务块外层*/
+.inner_w {
+   width: 1583px;
+   height: 137px;
+   text-align: center;
+   margin: 0 auto;
+   width: 1170px;
+}
+
+.inner_w .inner-nav li {
+   width: 180px;
+   height: 120px;
+   background: #f3f4f6;
+   border-radius: 5px;
+   margin: 15px 40px 0 0;
+   text-align: center;
+}
+
+.inner_w .inner-nav li.bg-img {
+   background: url(../images/guanwang/index/menu_2018.png)no-repeat
+}
+
+.inner_w .inner-nav li.erweima {
+   width: 250px;
+}
+
+.e_code {
+   position: relative;
+}
+
+.wx {
+   width: 100px;
+   text-align: left;
+   padding: 20px 20px 0 20px;
+}
+
+.wx-1 {
+   font-size: 16px;
+   font-weight: 600
+}
+
+.wx-2 {
+   font-size: 14px;
+   display: inline-block;
+   margin-top: 10px;
+   color: #9b9b9b;
+}
+
+.my_ewma {
+   width: 79px;
+   position: absolute;
+   top: 20px;
+   left: 140px;
+}
+
+/* 服务块导航 S */
+.ser_nav {
+   text-align: center;
+}
+
+.ser_nav a {
+   position: relative;
+   display: block;
+   width: 100%;
+   height: 100%;
+   padding: 0;
+   color: #000;
+   font-size: 14px;
+   transition: .2s;
+}
+
+.ser_nav a:hover {
+   transition: .2s;
+   color: #921d21;
+}
+
+.ser_icon {
+   background: url(../images/guanwang/index/menu_2018.png) no-repeat;
+   margin: 0 auto;
+   position: relative;
+   top: 16px;
+   width: 60px;
+   height: 60px;
+   overflow: hidden;
+}
+
+.ser_nav .ser_icon.zc {
+   background-position: 0 0;
+}
+
+.ser_nav .ser_icon.sf {
+   background-position: 0 -60px;
+}
+
+.ser_nav .ser_icon.bz {
+   background-position: 0 -120px;
+}
+
+.ser_nav .text {
+   display: inline-block;
+   font-size: 14px;
+   font-weight: 600;
+   margin-top: 15px;
+}
+
+.ser_nav .tel {
+   display: block;
+   margin-top: 16px;
+   height: 40px;
+   overflow: hidden;
+   line-height: 60px;
+   font-size: 16px;
+   font-weight: 600;
+}
+
+/* 服务块导航 END */
+/* 服务块 END */
+
+/* 导航栏 幸福的智慧 S*/
+.xfzh .menu-list {
+   width: 179px;
+   margin: 15px 12px 0 12px;
+   display: inline-block;
+   font-size: 14px;
+   font-weight: 600;
+   vertical-align: top;
+}
+
+.xfzh div {
+   height: 120px;
+   margin-bottom: 14px;
+   overflow: hidden;
+   border-radius: 5px;
+   background: #f3f4f6;
+}
+
+.xfzh .menu-list a {
+   text-decoration: none;
+   color: #555;
+   cursor: pointer;
+   transition: .2s;
+}
+
+.xfzh .menu-list a:hover {
+   transition: .2s;
+   color: #921d21;
+}
+
+/* 幸福的智慧 END */

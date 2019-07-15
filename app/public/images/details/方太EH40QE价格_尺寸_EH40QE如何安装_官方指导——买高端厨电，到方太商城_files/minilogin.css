@@ -1,0 +1,355 @@
+﻿.MiniWin{
+  transition: transform .5s;
+  -moz-transition: -moz-transform .5s;
+  -webkit-transition: -webkit-transform .5s;
+}
+.input-group .tips {
+    position: absolute;
+    left: 105%;
+    top: 50%;
+    white-space: nowrap;
+    margin-top: -10px;
+}
+.MiniWin .layCnt{
+  display: none;
+  margin-top: 40px;
+}
+#space{
+  height: 10000px;
+}
+.visible-cc{
+  left: 50%;
+  top: 50%;
+  margin-left: -350px;
+  margin-top: -250px;
+}
+.mask{
+  display: none;
+}
+
+.smaller{
+  transform: scale(0, 0);
+  -moz-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+}
+.MiniWin {
+    display:none;
+    width: 700px;
+    height: 500px;
+    font-size: 12px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 100003;
+    background: #fff;
+}
+
+.MiniWin .lay-closed,
+.protocol_box .protocol_close {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+  border-radius: 50%;
+  -o-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  opacity: .5;
+  text-align: center;
+  line-height: 26px;
+  font-size: 0;
+  transition: all .1s;
+  font-family: "微软雅黑";
+  background: url(/images/v3.0/lay-close.png) no-repeat center center;
+}
+
+
+.MiniWin .lay-closed:hover {
+  opacity: .9;
+  transform: rotate(180deg);
+}
+
+.MiniWin .box-hd {
+  height: 45px;
+  margin-bottom: 20px;
+  background: url(../../images/v3.0/logo-3.png) no-repeat center center;
+  background-size: auto 20px;
+}
+.MiniWin .input-group,
+.MiniWin .btn-group{
+  width: 330px;
+  margin: 10px auto;
+  text-align: center;
+}
+.MiniWin .text-right{
+  text-align: right;
+}
+.MiniWin .text-left{
+  text-align: left;
+}
+.MiniWin .method{
+  margin-right: 30px;
+}
+.MiniWin .method .circle{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  border-radius: 50%;
+  -o-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background: #CDCDCD;
+  vertical-align: middle;
+}
+.MiniWin .on .circle{
+  background: #EB8D5F;
+}
+.MiniWin .byMobile{
+  float: left;
+}
+
+.MiniWin input[type="text"],
+.MiniWin input[type="password"],
+.MiniWin input[type="button"]{
+  width: 330px;
+  line-height: 30px;
+  padding: 10px;
+  border: 0;
+  border-radius: 4px;
+  -o-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background: #f1f1f1;
+}
+.MiniWin input[type="text"]:focus,
+.MiniWin input[type="password"]:focus{
+  outline: 0;
+}
+.MiniWin .input-group .checkLabel{
+  float: left;
+  font-weight: normal;
+  color: #cdcdcd;
+  line-height: 30px;
+}
+.MiniWin .input-group input[type="checkbox"]{
+  margin-right: 4px;
+  margin-top: 0;
+  vertical-align: middle;
+}
+.MiniWin .input-group .linkFindPwd{
+  text-align: right;
+  line-height: 30px;
+}
+.MiniWin .input-group .findPwd{
+  color: #87bfff;
+}
+
+.MiniWin .input-group .submit-login,
+.MiniWin .input-group .submit-loginCode,
+.MiniWin .input-group .submit-regMobile,
+.MiniWin .input-group .submit-regMail{
+  display: block;
+  line-height: 50px;
+  margin-top: 10px;
+  color: #fff;
+  text-decoration: none;
+  background: #eb8d5f;
+  border-radius: 4px;
+  -o-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  transition: all .3s;
+}
+
+.MiniWin .input-group .submit-login,
+.MiniWin .input-group .submit-loginCode{
+  background: #eb8d5f;
+}
+.MiniWin .input-group .submit-login:hover,
+.MiniWin .input-group .submit-loginCode:hover{
+    background: #f00;
+}
+.MiniWin .input-group .submit-regMobile,
+.MiniWin .input-group .submit-regMail{
+  background: #eb8d5f;
+}
+.MiniWin .input-group .submit-regMobile:hover,
+.MiniWin .input-group .submit-regMail:hover{
+    background: #f00;
+}
+
+.MiniWin .input-group .regByPhone{
+  display: block;
+  border: 1px solid #eaeaea;
+  line-height: 50px;
+  color: #cdcdcd;
+  text-decoration: none;
+  border-radius: 4px;
+  -o-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.MiniWin .input-group .highLight{
+  color: #eb8d5f;
+}
+.spring-wx {
+  width: 27px;
+  height: 27px;
+  background-position: -50px -460px;
+  vertical-align: middle;
+  text-indent: -9999;
+  border-radius: 4px;
+  -o-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+.MiniWin .otherLogin{
+  margin-top: 50px;
+  color: #cdcdcd;
+}
+.rotateY0{
+  transform: rotateY(0deg);
+}
+.rotateY90{
+  transform: rotateY(360deg);
+}
+.rotateY270{
+  transform: rotateY(270deg);
+}
+.rotateY360{
+  transform: rotateY(360deg);
+}
+.findPwdBox input[type="password"],
+.regByMobileBox input[type="password"],
+.regByMailBox input[type="password"],
+.regByMailBox input[name="codeByImg"],
+.regByMailBox .imgCode,
+.findPwdBox input[name="codeByMobile"],
+.findPwdBox input[name="sendCode"]{
+  width: 48%;
+}
+.findPwdBox input[name="pwdForFindPwd"],
+.regByMobileBox input[name="pwdForMobile"],
+.regByMailBox input[name="pwdForMail"],
+.regByMailBox input[name="codeByImg"],
+.findPwdBox input[name="codeByMobile"]{
+  float: left;
+}
+.findPwdBox input[name="sendCode"]{
+  height: 50px;
+  background: #FDE2A7;
+}
+.regByMailBox .imgCode{
+  display: inline-block;
+  line-height: 50px;
+  text-align: left;
+}
+.regByMailBox .imgCode img {
+    margin-right: 10px;
+}
+
+.protocol_box{
+  display: none;
+  width: 700px;
+  height: 500px;
+  overflow: auto;
+  background: #f4f4f4;
+  font-size: 12px;
+  border: 10px solid #f4f4f4;
+  border-width: 10px 0 10px 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 100005;
+  margin-top: -250px;
+  margin-left: -350px;
+}
+.protoCnt{
+  height: 420px;
+  overflow: auto;
+  margin-top: 30px;
+}
+
+.protocol_title{
+  font-size: 16px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.protocol_foreword{
+  text-indent: 2em;
+  margin-bottom: 10px;
+}
+.protocol_box ul{
+  list-style: none;
+}
+.protocol_box li{
+  line-height: 1.5em;
+  margin-bottom: 5px;
+  text-indent: -18px;
+  padding: 0 20px;
+}
+
+.agree{
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #f4f4f4;
+}
+.agree .btn{
+  padding: 5px 20px;
+  background: #f40000;
+  display: inline-block;
+  *display: inline;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px 0;
+}
+.readme b,
+.remember{
+  color: #87BFFF;
+  cursor:pointer;
+}
+.remember {
+    float: left;
+    line-height: 30px;
+}
+.findPwdBox .otherLogin {
+    text-align: right;
+    width: 50%;
+    margin: 0;
+    float: right;
+}
+.otherLogin a {
+    font-size: 0;
+}
+
+.icon-status {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    margin-right: 5px;
+    line-height: 0;
+    vertical-align: middle;
+    background-image: url(/images/login-logic-icons.png);
+    _background-image: url(/images/login-logic-icons-8.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.success .icon-status {
+    background-position: -74px 0;
+}
+.protocol_box span{
+    font-weight:800;
+    text-decoration:underline;
+}
+.protocol_box h3 {
+    font-weight:800;
+    font-size:14px;
+}

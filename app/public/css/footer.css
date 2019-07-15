@@ -1,0 +1,242 @@
+.f-main {
+   width: 100%;
+   background: #fff;
+   height: 620px;
+}
+
+.f-main a {
+   color: #333;
+}
+
+.f-navtop {
+   height: 129px;
+}
+
+
+.f-navtop .f-top li {
+   text-align: center;
+   width: 230px;
+   text-emphasis: nowrap
+}
+
+.f-main .f-navtop ul a {
+   padding-top: 20px;
+   margin: 0px auto;
+   width: 168px;
+   display: block;
+}
+
+.f-main .f-navtop ul a:hover i {
+   background: url()
+}
+
+.f-navtop li a span {
+   font-size: 16px;
+   color: #333;
+}
+
+.f-navtop li a:hover span {
+   color: #c99f6a;
+
+}
+
+.f-navtop .f-top li a p {
+   color: #bbb;
+   text-align: center;
+   margin-top: 7px;
+}
+
+.block1 {
+   background: url(../images/scIndex/Official_n.png) no-repeat center center;
+   height: 45px;
+   width: 45px;
+   display: block;
+   margin-left: 60px;
+}
+
+.f-main .f-navtop ul a:hover i.block1 {
+   background: url(../images/scIndex/Official_k.png)no-repeat center center
+}
+
+.block2 {
+   background: url(../images/scIndex/warranty_n.png) no-repeat center center;
+   height: 45px;
+   width: 45px;
+   display: block;
+   margin-left: 60px;
+}
+
+.f-main .f-navtop ul a:hover i.block2 {
+   background: url(../images/scIndex/warranty_k.png)no-repeat center center
+}
+
+.block3 {
+   background: url(../images/scIndex/cash_n.png) no-repeat center center;
+   height: 45px;
+   width: 45px;
+   display: block;
+   margin-left: 60px;
+}
+
+.f-main .f-navtop ul a:hover i.block3 {
+   background: url(../images/scIndex/cash_k.png)no-repeat center center
+}
+
+.block4 {
+   background: url(../images/scIndex/back_n.png) no-repeat center center;
+   height: 45px;
+   width: 45px;
+   display: block;
+   margin-left: 63.5px;
+}
+
+.f-main .f-navtop ul a:hover i.block4 {
+   background: url(../images/scIndex/back_k.png)no-repeat center center
+}
+
+.block5 {
+   background: url(../images/scIndex/change_n.png) no-repeat center center;
+   height: 45px;
+   width: 45px;
+   display: block;
+   margin-left: 63.5px;
+}
+
+.f-main .f-navtop ul a:hover i.block5 {
+   background: url(../images/scIndex/change_k.png)no-repeat center center
+}
+
+.f-center ul {
+   margin: 20px auto;
+   padding-left: 60px;
+   float: left;
+}
+
+.f-center .f-navCenter li {
+   width: 126px;
+   float: left;
+}
+
+.f-center li h4 {
+   font-size: 14px;
+   font-weight: normal
+}
+
+.f-center li a {
+   font-size: 12px;
+   color: #bbb;
+   line-height: 31px;
+}
+
+.list-mt {
+   padding-top: 10px;
+}
+
+.f-center .list-mt a::after {
+   content: "";
+   clear: both;
+   display: block;
+}
+
+.f-center div.touch {
+   height: 157px;
+   float: left;
+   width: 450px;
+   padding-top: 10px;
+}
+
+.f-center div.touch p {
+   width: 90px;
+   text-align: center;
+}
+
+.f-ewm {
+   height: 90px;
+   padding: 0;
+   border: 1px solid #F4F4F4;
+}
+
+.kefu {
+   margin-top: 20px;
+}
+
+.f-center .kefu a {
+   font-size: 12px;
+   color: #fff;
+   text-align: center;
+   background: #9D1D22;
+   cursor: pointer;
+   padding: 5px 12px;
+   border-radius: 5px;
+   margin-right: 4px;
+}
+
+.f-center .kefu a:hover {
+   color: #c99f6a;
+}
+
+.kefu p:nth-child(1) {
+   font-size: 12px;
+   line-height: 100%;
+   margin-bottom: 10px;
+}
+
+.kefu p:nth-child(2) {
+   font-size: 16px;
+   line-height: 100%;
+   margin-bottom: 15px;
+}
+
+.f-bottom {
+   text-align: center;
+   width: 100%;
+   color: #333;
+}
+
+.f-bottom a {
+   margin: 0 15px;
+   color:#bbb
+}
+
+.f-bottom a:hover {
+   cursor: pointer;
+   color: #c0a59a;
+}
+
+.f-btmLink {
+   width: 100%;
+   text-align: center;
+}
+
+.centerBox {
+   margin: 10px auto 20px;
+}
+ul.centerBox li a{
+   color:#bbb
+}
+.f-btmLink .centerBox span {
+   margin: 0 15px;
+   color:#bbb;
+   font-size: 10px;
+}
+
+.f-btmLink .centerBox a:hover {
+   cursor: pointer;
+   color: #c0a59a;
+}
+.f-gs {
+   margin: 0 auto;
+   text-align: center;
+   padding-top: 0px;
+   color: #bbb;
+}
+.f-pic{
+   height:39px;
+   margin:10px auto;
+}
+.f-pic a {
+   margin: 0 5px;
+}
+.f-pic a img {
+   height: 28px;
+}
